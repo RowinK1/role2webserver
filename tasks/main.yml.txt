@@ -1,0 +1,9 @@
+- name: Installeer Apache, PHP en PHP-MySQL
+  apt:
+    name:
+      - "{{ apache_package }}"
+      - "{{ php_package }}"
+      - "{{ php_mysql_package }}"
+    state: present
+    update_cache: yes
+  notify: Restart Apache
